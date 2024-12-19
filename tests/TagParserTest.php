@@ -17,12 +17,18 @@ class TagParserTest extends TestCase
 
 
 
+    // create the instance over here because we need to do every time in each methods
+    protected TagParser $parser;
+    protected function setUp(): void
+    {
+        $this->parser = new TagParser();
+    }
+
+
+
     public function test_it_parses_a_single_tag()
     {
-        $parser = new TagParser();
-
-
-        $result = $parser->parse('personal');
+        $result = $this->parser->parse('personal');
         $expected = ['personal'];
 
 
@@ -33,10 +39,7 @@ class TagParserTest extends TestCase
 
     public function test_it_parses_a_comma_separated_list_of_tags_with_one_space()
     {
-        $parser = new TagParser();
-
-
-        $result = $parser->parse('personal, money, family');
+        $result = $this->parser->parse('personal, money, family');
         $expected = ['personal', 'money', 'family'];
 
 
@@ -47,10 +50,7 @@ class TagParserTest extends TestCase
 
     public function test_it_parses_a_comma_separated_list_of_tags_with_no_space()
     {
-        $parser = new TagParser();
-
-
-        $result = $parser->parse('personal,money,family');
+        $result = $this->parser->parse('personal,money,family');
         $expected = ['personal', 'money', 'family'];
 
 
@@ -60,10 +60,7 @@ class TagParserTest extends TestCase
 
     public function test_it_parses_a_pipe_separated_list_of_tags_with_no_space()
     {
-        $parser = new TagParser();
-
-
-        $result = $parser->parse('personal | money | family');
+        $result = $this->parser->parse('personal | money | family');
         $expected = ['personal', 'money', 'family'];
 
 
