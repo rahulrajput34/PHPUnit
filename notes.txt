@@ -1,0 +1,17 @@
+// TODO: first we do => composer init 
+// then pass all the values inside the  composer.json
+// Then run the command of the installing phpunit    ==>  composer require phpunit/phpunit
+// Then make the test case
+// Run the test case by passing the   =>  vendor/bin/phpunit --colors=always tests
+// Then give the more test cases and check it weather the test case is right or  wrong
+// We must pass this test case function name stating with test 
+
+
+
+
+// TODO: sometime we want to check only one function that time we run the command like below
+//     => vendor/bin/phpunit tests --colors --filter function_name
+
+
+
+// Note: For each test cases we make the separate function for it
